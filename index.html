@@ -6,7 +6,7 @@
 <div id="wm" class="modal hidden"><div class="box"><div id="wd" class="date"></div><h2>Today, privately.</h2><textarea id="txt" placeholder="Write whatever you want. This is your space."></textarea><div class="row"><button id="cancel" class="secondary">Cancel</button><button id="save">Save entry</button></div></div></div>
 <div id="vm" class="modal hidden"><div class="box"><div id="vd" class="date"></div><h2 id="vt"></h2><p id="vb" style="white-space:pre-wrap;color:#c8c8d2;line-height:1.8"></p><div class="row"><button id="close">Close</button></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
-const URL='YOUR_SUPABASE_URL',KEY='YOUR_SUPABASE_ANON_KEY',db=URL.startsWith('http')&&KEY.startsWith('ey')?supabase.createClient(URL,KEY,{auth:{persistSession:false}}):null,$=x=>document.getElementById(x),pad=x=>String(x).padStart(2,'0');
+const URL='https://nzaelikbjumaidaombmp.supabase.co',KEY='sb_publishable_IupVMhCmigAk4n5bTbRrjg_Fr05v-HE',db=URL.startsWith('http')&&KEY.startsWith('sb_publishable_')?supabase.createClient(URL,KEY,{auth:{persistSession:false}}):null,$=x=>document.getElementById(x),pad=x=>String(x).padStart(2,'0');
 const now=()=>new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'})),today=()=>{let d=now();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())},pretty=x=>new Date(x+'T00:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric')};
 function clock(){let d=now();$('clock').textContent='IST • '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds())+' • '+pretty(today());setTimeout(clock,1000)}clock();
 $('go').onclick=login;$('pw').onkeydown=e=>e.key==='Enter'&&login();
